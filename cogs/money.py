@@ -84,7 +84,6 @@ class MoneyCog(Cog):
             return
 
         # start session
-        assert isinstance(ctx.user, User)
         self.sessions[ctx.user.id] = SettleSession(ctx.user, multiplier)
         await ctx.response.send_message(
             f"{ctx.user.mention}님이 배수를 __**{multiplier:,}배수**__로 하여 "
