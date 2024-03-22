@@ -191,10 +191,7 @@ class MoneyCog(Cog):
         for user_id, mox in moxes.items():
             mox = round(mox)
             having = bank.get_money(user_id)
-            if having + mox >= 0:
-                bank.set_money(user_id, having + mox)
-            else:
-                bank.set_money(user_id, 0)
+            bank.set_money(user_id, having + mox)
 
             user = self.bot.get_user(user_id)
             if user is None:
